@@ -1,0 +1,179 @@
+/* Container de los Section */
+.info-inicio{
+
+    width: 100%;
+    position: relative;
+    margin-top: 100px;
+    text-align: center;
+}
+
+/* Section */
+.info-text{
+
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.info-text h2 , .info-text1 h2{
+
+    font-size: 30px;
+}
+
+.info-text p , .info-text1 p{
+
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+/* ARTICLE DE IMAGENES REFERENCIA - FAN ART */
+
+.info-images{
+
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 120px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Contenedor Imagen */
+.image-reference{
+
+    width: 200px;
+    margin: 20px;
+}
+
+/* Imagen */
+.image-reference img{
+
+    width: 100%;
+    object-fit: cover;
+    height: 300px;
+}
+
+/* INFO ADICIONAL */
+
+.info-additional{
+    
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 120px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.info-text-additional{
+
+    margin-top: 100px;
+    padding: 20px;
+    
+}
+
+.info-text-additional h2{
+
+    margin-bottom: 40px;
+}
+
+/* Btn Registrarse */
+.info-text-additional a{
+
+    text-decoration: none;
+    color: white;
+    background-color: #5E75C5;
+    padding: 15px 15px;
+    font-family: rale;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    transition: all 300ms;
+}
+
+.info-text-additional a:hover{
+
+    background-color: #8932D9;
+    transition: all 300ms;
+}
+
+/* Imagen Discord */
+.image-Discord{
+
+    width: 300px;
+    margin: 20px;
+}
+
+.image-Discord img{
+
+    width: 100%;
+    object-fit: cover;
+    height: 250px;
+    border-radius: 50px;
+}
+
+/* NOVEDADES ACTUALIZACION */
+.info-text1{
+
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.novedades{
+
+    margin-top: 70px;
+}
+
+.novedades h2{
+
+    font-size: 25px;
+}
+
+.novedades ul{
+
+    list-style: none;
+
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 420px) {
+    
+    /* Container de la Seccion */
+    .info-text , .info-text1{
+
+        width: 90%;
+    }
+
+    /* Fan Art */
+    .info-text h2 {
+
+        font-size: 25px;
+    }
+    
+    .image-reference{
+
+        width: 150px;
+        margin: 5px;
+    }
+
+    .image-reference img{
+
+        height: 250px;
+    }
+
+    /* Info Adicional */
+    .info-text-additional{
+
+        margin-top: 30px;
+        
+    }
+
+    .image-Discord{
+
+        margin-top: 50px;
+    }
+}
