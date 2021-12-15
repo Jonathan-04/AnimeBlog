@@ -1,0 +1,180 @@
+/* IMAGE DEL REGISTER */
+
+.container-register{
+
+    width: 100%;
+
+}
+
+
+.container-image-register .image-register{
+
+    width: 100%;
+    position: absolute;
+    height: 658px;
+    z-index: -1;
+    background-image: url(../img/Registro.png);
+    background-size:cover;
+}
+
+/* FORM register */
+
+.form-register{
+
+    position: relative;
+    top: 140px;
+    width: 30%;
+    height: 500px;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #9079a55e;
+    border-radius: 20px;
+}
+
+/* ITEMS DEL REGISTER */
+.items-register{
+
+    text-align: left;
+    padding: 20px;
+    margin-top: -10px;
+}
+
+.items-register h2{
+    
+    margin-top: 30px;
+}
+
+.items-register input{
+
+    margin-top: 20px;
+}
+
+/* Style Emial */
+
+.items-register #user{
+
+    width: 90%;
+    padding: 6px;
+    color: #8932D9;
+    border-style: none;
+    outline: 0px;
+    font-size: 18px;
+    border-bottom: 1px solid silver;
+    margin-top: 10px;
+}
+
+.items-register #user:focus{
+
+    border-bottom: 2px solid blue;
+    transition: all 300ms;
+    -webkit-transition: all 300ms;
+}
+
+/* Style Email */
+
+.items-register #email{
+
+    width: 90%;
+    padding: 6px;
+    color: #8932D9;
+    border-style: none;
+    font-size: 18px;
+    outline: 0px;
+    border-bottom: 1px solid silver;
+    margin-top: 10px;
+}
+
+.items-register #email:focus{
+
+    border-bottom: 2px solid blue;
+    transition: all 300ms;
+    -webkit-transition: all 300ms;
+}
+
+/* Style Password */
+
+.items-register #password{
+
+    width: 90%;
+    padding: 6px;
+    color: #8932D9;
+    border-style: none;
+    font-size: 18px;
+    outline: 0px;
+    border-bottom: 1px solid silver;
+    margin-top: 10px;
+}
+
+.items-register #password:focus{
+
+    border-bottom: 2px solid blue;
+    transition: all 300ms;
+    -webkit-transition: all 300ms;
+}
+
+
+/* Submit */
+.form-register input[type="submit"]{
+
+    width: 80%;
+    font-family: bebas;
+    letter-spacing: 3px;
+    padding: 7px 40px;
+    font-size: 20px;
+    background: #5E75C5;
+    color: white;
+    border-style: none;
+    border-radius: 15px;
+    margin-top: 10px;
+    font-weight: 100;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.form-register input[type="submit"]:hover{
+
+    background: #3d5bc7;
+}
+
+/* ENLACE PARA REGISTRO */
+
+.form-register p{
+
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.form-register p a{
+
+    text-decoration: none;
+    color: #8932D9;
+    
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 420px){
+
+    .form-register{
+
+        width: 80%;
+    }
+
+    .form-register p{
+
+        font-size: 13px;
+    }
+
+    .container-image-register .image-register{
+        
+        left: -40px;
+        width: 450px;
+    }
+
+
+}
