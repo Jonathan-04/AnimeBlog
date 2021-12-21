@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicaciones</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/publicaciones.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="container-navbar">
+        <h2>AnimeBlog</h2>
+        <ul>
+            <li><a href="#"><i class="far fa-bell"></i></a></li>
+            <li><a href=""><i class="far fa-comments"></i></a></li>
+            <li><a href="index.html">Cerrar Sesion</a></li>
+        </ul>
+    </div>
+</nav>    
+
+<!-- Sub Menu 2 -->
+<div class="container-subMenu2">
+    <div class="items-subMenu2">
+        <ul>
+            <li><a href=""><p>INICIO</p></a></li>
+            <li><a href=""><p>PUBLICACIONES</p></a></li>
+            <li><a href=""><p>MI PERFIL</p></a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- SECCION DE LAS PUBLICACIONES -->
+<div class="container-publicaciones">
+
+    <!-- Publicaciones de los Usuarios -->
+    <section class="container-publicUser">
+        <div class="myPublicar">
+            <ul>
+                <li><img src="img/f8de62d1757fea74c38e5ec4a53d8e04.jpg"></li>
+                <li><p>lrDemon</p></li>
+            </ul>
+            <textarea name="" id="comentUser" placeholder="Haz tu publicación..."></textarea>
+
+            <div class="options-user">
+                <div class="file-icon" id="attachment"><i class="fas fa-image"></i></div>
+                <input id="file-input" type="file" style="display:none" multiple/>
+
+                <input type="submit" name="publicar" value="PUBLICAR">
+            </div>
+
+        </div>
+    </section>
+
+
+    <aside class="container-rankingWaifu"></aside>
+</div>
+
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/fileIcon.js"></script>
+</body>
+</html>

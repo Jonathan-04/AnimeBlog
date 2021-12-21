@@ -13,6 +13,7 @@
     width: 100%;
     display: flex; /* ITEMS EN FILAS */
     justify-content: space-between; /* ITEMS A LOS LADOS */
+
 }
 
 .container-navbar > h2{
@@ -27,7 +28,7 @@
     height: 50px;
     font-family: rale;
     list-style: none;
-    
+    display: flex;
 }
 
 .container-navbar > ul > li{
@@ -50,3 +51,7 @@
     color: white;
     
 }
+
+
+/* SUB MENU 2 */
+
