@@ -3,47 +3,6 @@ body{
     background-color: #e9e9e9c0;
 }
 
-.container-subMenu2{
-
-    width: 100%;
-    height: 50px;
-    background-color: white;
-}
-
-.items-subMenu2{
-
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.items-subMenu2 ul{
-
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    list-style: none;
-}
-
-.items-subMenu2 ul li{
-
-    margin: 5px;
-    padding: 10px;
-    margin-top: 8px;
-    border-bottom: 1px solid transparent;
-    transition: all 300ms;
-}
-
-.items-subMenu2 ul li a{
-
-    color: black;
-}
-
-.items-subMenu2 ul li:hover{
-
-    border-bottom: 1px solid black;
-}
-
 /* SECCION DE LAS PUBLICACIONES Y RANKING */
 
 /* Contenedor */
@@ -325,18 +284,6 @@ body{
 
         width: 100%;
         right: 0px;
-    }
-
-
-    .items-subMenu2 ul li{
-
-        margin-top: 8px;
-    }
-
-    .items-subMenu2 ul li p{
-
-        font-size: 13px;
-        
     }
 
     /* Imagen de la publicacion */

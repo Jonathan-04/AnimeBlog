@@ -1,0 +1,113 @@
+body{
+
+    background-color: #e9e9e9c0;
+}
+
+.container-userPerfil{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+/* Imagen */
+.image-userPerfil{
+
+    position: relative;
+    width: 20%;
+}
+
+.image-userPerfil img{
+
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+
+}
+
+/* Opciones */
+.opciones-userPerfil{
+
+    width: 60%;
+    margin-top: 35px;
+    margin-left: 20px;
+    position: relative;
+}
+
+.opciones-userPerfil h2{
+
+    width: 10%;
+    font-size: 45px;
+    margin-left: 20px;
+    color: #8932D9;
+}
+
+/* Botones */
+
+.opciones-userPerfil ul{
+
+    margin-top: 120px;
+    display: flex;
+    list-style: none;
+}
+
+.opciones-userPerfil ul li{
+
+    margin: 20px;
+}
+
+.opciones-userPerfil input[type="button"]{
+
+    width: 170px;
+    font-family: bebas;
+    letter-spacing: 2px;
+    padding: 12px 32px;
+    font-size: 17px;
+    background: #8932D9;
+    color: white;
+    border-style: none;
+    border-radius: 10px;
+    font-weight: 100;
+    cursor: pointer;
+    transition: all 300ms;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 420px){
+
+    /* Imagen */
+.image-userPerfil{
+
+    position: relative;
+    width: 70%;
+
+}
+
+/* Botones */
+
+.opciones-userPerfil ul{
+
+    margin-top: 50px;
+    display: block;
+}
+
+.opciones-userPerfil ul li{
+
+    position: relative;
+    right: 50px;
+    margin-bottom: 40px;
+}
+
+.opciones-userPerfil input[type="button"]{
+
+    width: 250px;
+
+}
+
+
+}
