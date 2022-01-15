@@ -1,0 +1,89 @@
+/* Container */
+.option-datosBasicosUser{
+
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
+
+}
+
+.data-optionUser{
+
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+/* Datos */
+.data-optionUser ul{
+
+    margin: 50px;
+    border-bottom: 1px solid rgb(161, 161, 161);
+}
+
+.data-optionUser ul li{
+
+    padding: 10px;
+}
+
+.data-User{
+
+    margin: 20px;
+    font-weight: bold;
+}
+
+.data-optionUser .data-User:nth-child(2) ul{
+
+    border-bottom: none;
+}
+
+/* BTN Cambiar contraseña */
+#btn-cambiarContraseña, #btn-editarDatos{
+
+
+    font-family: bebas;
+    letter-spacing: 2px;
+    padding: 7px 20px;
+    font-size: 18px;
+    background: #8932D9;
+    color: white;
+    border-style: none;
+    border-radius: 15px;
+    margin-top: 50px;
+    font-weight: 100;
+    cursor: pointer;
+
+}
+
+#btn-editarDatos{
+
+    margin-top: 126px;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 420px){
+
+    .data-optionUser{
+
+        margin-top: 20px;
+    }
+
+    .data-optionUser ul{
+
+        margin: 30px;
+    }
+
+    .data-optionUser ul li{
+
+        padding: 7px;
+    }
+
+    #btn-editarDatos{
+
+        margin-top: 70px;
+    }
+}
