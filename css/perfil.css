@@ -55,17 +55,15 @@ body{
 
 .opciones-userPerfil ul li{
 
-    margin: 20px;
+    margin: 10px;
 }
 
-.opciones-userPerfil input[type="button"]{
+.btn-options a{
 
-    width: 170px;
     font-family: bebas;
     letter-spacing: 2px;
-    padding: 12px 32px;
+    padding: 12px 40px;
     font-size: 17px;
-    background: #8932D9;
     color: white;
     border-style: none;
     border-radius: 10px;
@@ -75,6 +73,14 @@ body{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
+.desActive{
+    background-color: #9d5bda;
+}
+
+.active{
+
+    background-color: #7300df;
+}
 
 /* RESPONSIVE */
 
@@ -84,8 +90,24 @@ body{
 .image-userPerfil{
 
     position: relative;
-    width: 70%;
+    width: 40%;
+}
 
+.image-userPerfil img{
+
+    height: 300px;
+
+}
+
+.opciones-userPerfil{
+
+    margin-top: 20px;
+    margin-left: 0px;
+}
+
+.opciones-userPerfil h2{
+    width: 90%;
+    font-size: 35px;
 }
 
 /* Botones */
@@ -98,16 +120,10 @@ body{
 
 .opciones-userPerfil ul li{
 
+    text-align: right;
     position: relative;
-    right: 50px;
+    right:0px;
     margin-bottom: 40px;
 }
-
-.opciones-userPerfil input[type="button"]{
-
-    width: 250px;
-
-}
-
 
 }
