@@ -67,6 +67,12 @@
 
 @media screen and (max-width: 420px){
 
+    .data-User{
+
+        margin-left: 0px;
+    }
+
+
     .data-optionUser{
 
         margin-top: 20px;
@@ -76,6 +82,7 @@
     .data-optionUser ul{
 
         margin: 30px;
+        margin-left: 0px;
     }
 
     .data-optionUser ul li{
