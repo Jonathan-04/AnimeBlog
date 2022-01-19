@@ -165,4 +165,10 @@
 
     }
 
+    /* INSIGNIAS */
+    #option2 ul.insignias-user{
+
+        width: 250px;
+    }
+
 }
