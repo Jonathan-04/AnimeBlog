@@ -41,7 +41,7 @@
 }
 
 /* BTN Cambiar contraseña */
-#btn-cambiarContraseña, #btn-editarDatos{
+#btn-cambiarContraseña, #btn-editarDatos, #btn-editarApariencia{
 
 
     font-family: bebas;
@@ -61,6 +61,63 @@
 #btn-editarDatos{
 
     margin-top: 126px;
+}
+
+/* SECTION 2 APARIENCIA */
+#option2 .data-optionUser {
+
+    justify-content: left;
+}
+
+#option2 .data-User img{
+
+    width: 200px;
+    margin-top: 30px;
+    border-radius: 100px;
+}
+
+#option2 .data-optionUser ul{
+
+    border-bottom: none;
+}
+
+#option2 p{
+
+    font-weight: bold;
+}
+
+/* INSIGNIAS */
+#option2 ul.insignias-user{
+
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: space-around;
+}
+
+#option2 .insignia-title{
+
+    margin-top: 80px;
+    margin-left: 55px;
+}
+
+#option2 ul.insignias-user li{
+
+    font-size: 60px;
+    font-weight: normal;
+}
+
+#option2 .insignias-user li:nth-child(1){ color: #9950DC;}
+#option2 .insignias-user li:nth-child(2){ color: #FB952F;}
+#option2 .insignias-user li:nth-child(3){ color: #FA40BC;}
+#option2 .insignias-user li:nth-child(4){ color: #408A47;}
+#option2 .insignias-user li:nth-child(5){ color: #FA4040;}
+#option2 .insignias-user li:nth-child(6){ color: #404040;}
+
+#btn-editarApariencia{
+
+    margin-left: 50px;
 }
 
 /* RESPONSIVE */
@@ -94,4 +151,18 @@
 
         margin-top: 70px;
     }
+
+    /* SECTION 2 APARIENCIA */
+
+    #option2 .data-User{
+
+        margin-left: 25px;
+    }
+
+    #option2 .data-optionUser{
+
+        margin-top: 80px;
+
+    }
+
 }
