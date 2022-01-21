@@ -41,7 +41,7 @@
 }
 
 /* BTN Cambiar contraseña */
-#btn-cambiarContraseña, #btn-editarDatos, #btn-editarApariencia{
+#btn-cambiarContraseña, #btn-editarDatos, #btn-editarApariencia, #btn-editarLinks{
 
 
     font-family: bebas;
@@ -120,6 +120,41 @@
     margin-left: 50px;
 }
 
+/* SECCION 3 LINKS */
+/* Container de los Links */
+ul.container-links{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: none;
+}
+
+ul.container-links li{
+
+    width: 500px;
+    margin-bottom: 50px;
+}
+
+ul.container-links img{
+
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+ul.container-links li label:nth-child(2){
+
+    color: red;
+}
+
+#btn-editarLinks{
+
+    margin-left: 50px;
+}
+
+
 /* RESPONSIVE */
 
 @media screen and (max-width: 420px){
@@ -170,5 +205,23 @@
 
         width: 250px;
     }
+
+    /* SECTION 3 LINKS */
+    ul.container-links li{
+
+        text-align: center;
+        width: 340px;
+    }
+
+    #option3 .data-optionUser{
+
+        justify-content: normal;
+    }
+
+    #btn-editarLinks{
+
+        margin-left: 10px;
+    }
+    
 
 }
