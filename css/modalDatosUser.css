@@ -1,0 +1,189 @@
+@font-face{
+    font-family: rale;
+    src: url(../Fuentes/Raleway-Regular.ttf);
+}
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: rale;
+}
+
+.flex{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* MODAL */ 
+
+.modal{
+
+    display: none;
+    position: fixed;
+    text-align: left;
+    z-index: 1;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(146, 146, 146);
+
+}
+
+.contenido-modal{
+
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    width: 62%;
+    box-shadow: 0 0 6px 0 rgba(95, 64, 64, 0.4);
+    animation-name: modal;
+    animation-duration: 1s;
+}
+
+/* ANIMACION DE DESPLIEGUE */
+@keyframes modal{
+
+    from{
+        top:-330px;
+        opacity: 0;
+
+    } to{
+        top: 0;
+        opacity: 1;
+    }
+}
+
+/* BOTON PARA CERRAR EL MODAL */
+
+.close{
+    
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal-header{
+
+    padding: 22px 16px;
+    background-color: #8932D9;
+}
+
+.modal-header h1{
+
+    font-size: 18px;
+    color: white;
+}
+
+.modal-body{
+
+    padding: 10px 60px;
+}
+
+/* ESTILO DE LA INFORMACION */
+/* PERSONAL */
+
+.infoPersonal h2{
+
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.datosCuenta{
+
+    margin-top: 40px;
+}
+
+.datosCuenta ul{
+
+    list-style: none;
+    margin: 20px;
+}
+
+.datosCuenta ul li{
+
+    padding: 5px;
+}
+
+.datosCuenta ul li input[type="text"], input[type="email"], input[type="date"], #selectGeneroUser {
+
+    color: #8932D9;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 6px;
+    border-style: none;
+    outline: 0px;
+    border-bottom: 1px solid silver;
+    margin-left: 10px;
+}
+
+
+/* BOTONES */
+
+.btn-formulario{
+
+    width: 100%;
+    position: relative;
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-formulario input[type="submit"]{
+
+    padding: 8px 10px;
+    width: 120px;
+    font-size: 16px;
+    color: white;
+    margin: 10px;
+    border: none;
+}
+
+.btn-formulario #btn_actualizar{
+
+    background-color: #9f54e6;
+    transition: all 300ms;
+    -webkit-transition: all 300ms;
+}
+
+.btn-formulario #btn_actualizar:hover{
+
+    background-color: #8932D9;
+}
+
+.btn-formulario #btn_cerrar{
+
+    background-color: rgb(168, 168, 168);
+    transition: all 300ms;
+    -webkit-transition: all 300ms;
+}
+
+.btn-formulario #btn_cerrar:hover{
+
+    background-color: rgb(78, 78, 78);
+
+}
+
+/* RESPONSIVE MODAL */
+@media screen and (max-width: 420px){
+
+    .contenido-modal{
+        width: 100%;
+    }
+
+    .modal-body {
+        padding: 10px 0px;
+    }
+
+    .datosCuenta ul{
+        margin: 30px;
+    }
+}

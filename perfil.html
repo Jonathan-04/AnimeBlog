@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/perfil.css">
     <link rel="stylesheet" href="css/opcionesDatosUser.css">
+    <link rel="stylesheet" href="css/modalDatosUser.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
@@ -67,15 +68,15 @@
         <div class="data-sectionUser">
             <div class="data-User">
                 <ul>
-                    <li><label>NOMBRE: Jonathan</label></li>
-                    <li><label>APELLIDOS: Velasquez Vargas</label></li>
+                    <li><label>NOMBRE: lrDemon</label></li>
+                    <li><label>APELLIDOS: lrDemon1 LrDemon2</label></li>
                 </ul>
             </div>
     
             <div class="data-User">
                 <ul>
                     <li><label>USUARIO: lrDemon</label></li>
-                    <li><label>EMAIL: jonathanvel@gmail.com</label></li>
+                    <li><label>EMAIL: lrDemon@gmail.com</label></li>
 
                     <button id="btn-cambiarContraseña">Cambiar Contraseña</button>
                 </ul>
@@ -93,6 +94,7 @@
 
             <div class="data-User">
                 <button id="btn-editarDatos">Editar Datos</button>
+                
             </div>
             
             </div>
@@ -100,6 +102,66 @@
 
     </div>
     </article>
+
+            <!-- MODAL PARA EDITAR INFORMACION DE LA CUENTA -->
+
+            <div id="Mimodal" class="modal">
+                <div class="flex" class="flex">
+                    <div class="contenido-modal">
+                    
+                        <div class="modal-header flex">
+                            <h1>EDITAR INFORMACION DE LA CUENTA</h1>
+                            <span class="close" id="close"><i class="far fa-times-circle"></i></span>
+                        </div>
+                    
+                        <div class="modal-body">
+                            <form action="" method="POST">
+                                            
+                                <div class="infoPersonal">
+                    
+                                    <h2>DATOS BASICOS</h2>
+                    
+                                    <div class="datosCuenta">
+                    
+                                        <ul>
+                                            <li>NOMBRE: <input type="text" value="lrDemon"></li>
+                                            <li>APELLIDOS: <input type="text" value="lrDemon1 LrDemon2"></li>
+                                        </ul>
+    
+                                        <ul>
+                                            <li>USUARIO: <input type="text" value="lrDemon"></li>
+                                            <li>EMAIL <input type="email" value="lrDemon@gmail.com"></li>
+                                        </ul>
+    
+                                        <ul>
+                                            <li>CUMPLEAÑOS: <input type="date" name="" id=""></li>
+                                            <li>GENERO: <select name="" id="selectGeneroUser">
+                                                <option value="Masculino">Masculino</option>
+                                                <option value="Femenino">Femenino</option>
+                                            </select></li>
+                                        </ul>
+                    
+                                    </div>
+                                            
+                                    <div class="btn-formulario">
+                    
+                                        <!--<input type="submit" value="Cancelar" id="btn_cerrar">-->
+                                        <input type="submit" value="Actualizar" id="btn_actualizar" name="Actualizar">
+                                                    
+                                    </div>
+                    
+                    
+                                </div>
+                            </form>
+                        </div>
+                    
+                    
+                    </div>
+                </div>
+            </div> 
+
+
+
 
     <!-- SECCION DE LA OPCION 2 : APARIENCIA -->
     <article id="option2">
@@ -206,6 +268,7 @@
 
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/optionsPerfil.js"></script>
+    <script src="js/modalDatosUser.js"></script>
 
 </body>
 </html>
