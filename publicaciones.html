@@ -92,8 +92,60 @@
             <div class="opciones-public">
                 <ul>
                     <li><i class="far fa-heart"></i><p>12</p></li>
-                    <li><i class="far fa-comment"></i><p>4</p></li>
+
+                    <!-- BOTON PARA ABRIR LA CAJA DE COMENTARIOS DE LA PUBLICACION -->
+                    <li><button id="btnComments" onclick="mostrarComment()"><i class="far fa-comment"></i></button><p>4</p></li>
                 </ul>
+            </div>
+
+        </div>
+
+        <!-- CONTENEDOR DE LOS COMENTARIOS-->
+        <div class="container-comment" id="comments-users">
+            <div class="myComment-user">
+
+                <!-- BOTON PARA CERRAR LOS COMENTARIOS CUANDO ESTA EN RESPONSIVE -->
+                <button id="btnCerrar-comments" onclick="cerrarCommentsInResponsive()"><i class="fas fa-chevron-up"></i></button>
+                
+                <!-- CAJA PARA REALIZAR EL COMENTARIO -->
+                <ul>
+                    <li><img src="img/f8de62d1757fea74c38e5ec4a53d8e04.jpg" alt=""></li>
+                    <li><textarea name="" id="comment-user" placeholder="Escribe tu comentario..."></textarea></li>
+                    
+                    <li><a href="#"><i class="fas fa-paper-plane"></i></a></li>
+                </ul>   
+                
+                <!-- COMENTARIOS DE OTROS USUARIOS -->
+                <div class="othersComment-user">
+                    <ul>
+                        <li><img src="img/uwp1350848.jpeg" alt=""></li>
+                        <ul>
+                            <li>Koalita</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        </ul>
+
+                    </ul>
+                </div>
+                <div class="othersComment-user">
+                    <ul>
+                        <li><img src="img/uwp1350848.jpeg" alt=""></li>
+                        <ul>
+                            <li>Koalita</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        </ul>
+
+                    </ul>
+                </div>
+                <div class="othersComment-user">
+                    <ul>
+                        <li><img src="img/f8de62d1757fea74c38e5ec4a53d8e04.jpg" alt=""></li>
+                        <ul>
+                            <li>lrDemon</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                        </ul>
+
+                    </ul>
+                </div>            
             </div>
         </div>
 
@@ -126,7 +178,7 @@
             <div class="opciones-public">
                 <ul>
                     <li><i class="far fa-heart"></i><p>12</p></li>
-                    <li><i class="far fa-comment"></i><p>4</p></li>
+                    <li><button id="btnComments" onclick="mostrarComment()"><i class="far fa-comment"></i></button><p>4</p></li>
                 </ul>
             </div>
         </div>
@@ -217,5 +269,6 @@
 
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/fileIcon.js"></script>
+    <script src="js/displayComments.js"></script>
 </body>
 </html>

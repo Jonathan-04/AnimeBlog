@@ -255,6 +255,136 @@ body{
     margin-left: 5px;
 }
 
+/* BTN ABRIR COMENTARIOS */
+#btnComments{
+
+    background: none;
+    border-style: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+#btnComments:hover{
+
+    color: #8932D9;
+}
+
+/* BTN CERRAR COMENTARIOS EN RESPONSIVE */
+#btnCerrar-comments{
+
+    display: none;
+    background: none;
+    border-style: none;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+
+/* CAJA DE COMENTARIOS A LAS PUBLICACIONES */
+/* Container */
+.container-comment{
+
+    display: none;
+    position: relative;
+    width: 65%;
+    height: auto;
+    margin-left: 110px;
+    margin-top: 5px;
+    background-color: white;
+}
+
+/* CAJA PARA REALIZAR EL COMENTARIO */
+.myComment-user{
+
+    width: 100%;
+    padding: 10px;
+    
+}
+
+.myComment-user ul, .othersComment-user ul{
+
+    display: flex;
+    
+}
+
+.myComment-user ul{
+    
+    margin-bottom: 20px;
+}
+
+.myComment-user ul li{
+
+    margin: 5px;
+}
+
+.myComment-user img, .othersComment-user img{
+    
+    width: 50px;
+    border-radius: 45px;
+
+}
+
+.myComment-user ul li textarea{
+
+    width: 450px;
+    height: 70px;
+    padding: 12px 15px;
+    border-style: none;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #EFEFEF;
+    font-family: rale;
+    font-size: 16px;
+    letter-spacing: 1px;
+    resize: none;
+    outline: 0px;
+}
+
+.myComment-user ul li i{
+
+    color: #8932D9;
+    font-size: 25px;
+    transform: rotate(45deg);
+    margin: 10px;
+    margin-top: 20px;
+}
+
+/* COMENTARIOS DE OTROS USUARIOS A LA PUBLICACION */
+.othersComment-user{
+    
+    font-family: rale;
+    margin-bottom: -20px;
+}
+
+.othersComment-user img{
+
+    margin-right: 10px;
+}
+
+.othersComment-user ul:nth-child(2){
+
+    display: block;
+}
+
+.othersComment-user ul:nth-child(2) li:nth-child(1){ 
+
+    font-weight: bold; 
+    font-size: 15px; 
+
+}
+
+
+.othersComment-user ul:nth-child(2) li:nth-child(2){ 
+
+    width: 100%;
+    height: auto;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #EFEFEF;
+}
+
 
 /* RESPONSIVE */
 
@@ -298,4 +428,56 @@ body{
         height: 500px;
 
     }
+
+    /* CAJA DE COMENTARIOS A LAS PUBLICACIONES */
+
+    .container-comment{
+
+        display: none;
+        position: fixed;
+        z-index: 1;
+        overflow: auto;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        animation-name: modal;
+        animation-duration: 0.3s;
+        margin-left: 0px;
+    }
+
+    @keyframes modal{
+
+        from{
+            top:-330px;
+            opacity: 0;
+    
+        } to{
+            top: 0;
+            opacity: 1;
+        }
+    }
+
+    #btnCerrar-comments{
+
+        display: block;
+        width: 100%;
+        background: #8932D9;
+        height: 20px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    #btnCerrar-comments i{
+
+        color: white;
+    }
+
+
+    .myComment-user ul li textarea{
+
+        width: 250px;
+    }
+
 }
