@@ -2,7 +2,10 @@ let modal = document.getElementById('Mimodal');
 let flex = document.getElementById('flex');
 let abrir = document.getElementById('btn-editarDatos');
 let cerrar = document.getElementById('close');
-let btn_cerrar = document.getElementById('btn_cerrar');
+
+// APARIENCIA
+let modal2 = document.getElementById('Mimodal2');
+let abrir2 = document.getElementById('btn-editarApariencia');
 
 
 abrir.addEventListener('click', function(){
@@ -16,11 +19,13 @@ cerrar.addEventListener('click', function(){
     modal.style.display = 'none';
 });
 
-btn_cerrar.addEventListener('click', function(){
+// APARIENCIA
 
-    modal.style.display = 'none';
+abrir2.addEventListener('click', function(){
+
+    modal2.style.display = 'block';
+    
 });
-
 
 
 

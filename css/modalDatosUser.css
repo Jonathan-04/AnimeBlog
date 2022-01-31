@@ -187,3 +187,20 @@
         margin: 30px;
     }
 }
+
+/* APARIENCIA */
+
+/* Previsualizar la imagen seleccionada */
+#previewImageUser{
+
+    margin-top: 20px;
+}
+
+#previewImageUser img{
+
+
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    object-fit: cover;
+}

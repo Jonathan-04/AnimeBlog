@@ -197,6 +197,52 @@
 
     </article>
 
+                <!-- MODAL PARA EDITAR INFORMACION DE LA CUENTA -->
+
+                <div id="Mimodal2" class="modal">
+                    <div class="flex" class="flex">
+                        <div class="contenido-modal">
+                        
+                            <div class="modal-header flex">
+                                <h1>EDITAR APARIENCIA DE LA CUENTA</h1>
+                                <span class="close" id="close"><i class="far fa-times-circle"></i></span>
+                            </div>
+                        
+                            <div class="modal-body">
+                                <form action="" method="POST">
+                                                
+                                    <div class="infoPersonal">
+                        
+                                        <h2>APARIENCIA</h2>
+                        
+                                        <div class="datosCuenta">
+                        
+                                            <ul>
+                                                <li>SELECCIONA TU FOTO: <input id='input-file' type='file'/></li>
+                                                <li><div id="previewImageUser"></div></li>
+                                                <hr>
+                                            
+                                            </ul>
+     
+                                        </div>
+                                                
+                                        <div class="btn-formulario">
+                        
+                                            <!--<input type="submit" value="Cancelar" id="btn_cerrar">-->
+                                            <input type="submit" value="Actualizar" id="btn_actualizar" name="Actualizar">
+                                                        
+                                        </div>
+                        
+                        
+                                    </div>
+                                </form>
+                            </div>
+                        
+                        
+                        </div>
+                    </div>
+                </div> 
+
 
     <!-- SECCION DE LA OPCION 3 : LINKS -->
     <article id="option3">
@@ -269,6 +315,7 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/optionsPerfil.js"></script>
     <script src="js/modalDatosUser.js"></script>
+    <script src="js/previweIMG.js"></script>
 
 </body>
 </html>
