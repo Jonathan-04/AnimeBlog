@@ -18,28 +18,29 @@
     <div class="container-image-register">
         <p class="image-register"></p>
     </div>
-    <div class="form-register">
-        <h2>REGISTRO</h2>
+    <form method="POST" enctype="multipart/form-data" action="DataBase/php/registerUser.php">
+        <div class="form-register">
+            <h2>REGISTRO</h2>
 
-        <div class="items-register">
+            <div class="items-register">
             
-            <!-- INPUTS DE DATOS -->
-            <h2>USUARIO</h2>
-            <input type="text" id="user" name="user">
+                <!-- INPUTS DE DATOS -->
+                <h2>USUARIO</h2>
+                <input type="text" name="user" id="user" required>
 
-            <h2>EMAIL</h2>
-            <input type="email" name="email" id="email">
+                <h2>EMAIL</h2>
+                <input type="email" name="email" id="email" required>
 
-            <h2>CONTRASEÑA</h2>
-            <input type="password" id="password" name="email">
+                <h2>CONTRASEÑA</h2>
+                <input type="password" name="password" id="password" required>
 
+            </div>
+
+            <input type="submit" value="CREAR CUENTA" id="Ingresar" name="Registrar">
+
+            <p>¿Ya tienes una cuenta? <a href="login.php">Ingresa aquí!</a></p>
         </div>
-
-        <input type="submit" value="CREAR CUENTA" id="Ingresar" name="Ingresar">
-
-        <p>¿Ya tienes una cuenta? <a href="login.html">Ingresa aquí!</a></p>
-
-    </div>
+    </form>
 </div>
 
 

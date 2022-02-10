@@ -1,3 +1,17 @@
+<?php 
+
+/* Verificar si hay una Session iniciada */
+include 'DataBase/php/conexionDB.php';
+session_start();
+
+if(!isset($_SESSION['sessionUser']) || !$_SESSION['sessionUser'] ){
+
+    header("Location: login.php");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,11 +33,13 @@
 <nav class="navbar">
     <div class="container-navbar">
         <h2>AnimeBlog</h2>
+
         <ul>
             <li><a href="#"><i class="far fa-bell"></i></a></li>
             <li><a href=""><i class="far fa-comments"></i></a></li>
-            <li><a href="index.html">Cerrar Sesion</a></li>
+            <li><a href="DataBase/php/logout.php">Cerrar Sesion</a></li>
         </ul>
+
     </div>
 </nav>    
 
@@ -33,7 +49,7 @@
         <ul>
             <li><a href=""><p>INICIO</p></a></li>
             <li><a href=""><p>PUBLICACIONES</p></a></li>
-            <li><a href="perfil.html"><p>MI PERFIL</p></a></li>
+            <li><a href="perfil.php"><p>MI PERFIL</p></a></li>
         </ul>
     </div>
 </div>
@@ -45,30 +61,76 @@
     <section class="container-publicUser">
         <!-- Info del Usuario-->
         <div class="myPublicar">
+
+            <?php
+
+            /* Traer información del Usuario al que inició la Session */
+            if (isset($_SESSION['idUser'])){
+
+            $query = " SELECT id, userName, photoProfile FROM users WHERE id = '".$_SESSION['idUser']."'";
+            $resultado = mysqli_query($conexionDB, $query);
+
+            $filas = mysqli_fetch_array($resultado);
+
+            ?>
+
             <ul>
-                <li><img src="img/f8de62d1757fea74c38e5ec4a53d8e04.jpg"></li>
-                <li><p>lrDemon</p></li>
+                <li><img src="DataBase/img/userPhoto/<?php echo $filas['photoProfile']; ?>"></li>
+                <li><p><?php echo $filas['userName']; ?></p></li>
             </ul>
+            <?php
+            }
+            ?>
+
             <!-- Caja para realizar el comentario -->
-            <textarea name="" id="comentUser" placeholder="Haz tu publicación..."></textarea>
+            <form method="POST" enctype="multipart/form-data" action="DataBase/php/publicationUser.php">
+                <textarea name="description" id="comentUser" placeholder="Haz tu publicación..." required></textarea>
 
-            <!-- Botones -->
-            <div class="options-user">
-                <div class="file-icon" id="attachment"><i class="fas fa-image"></i></div>
-                <input id="file-input" type="file" style="display:none" multiple/>
+                <!-- Botones -->
+                <div class="options-user">
+                    <div class="file-icon" id="attachment"><i class="fas fa-image"></i></div>
+                        <input name="imagePublication" id="file-input" type="file" style="display:none" multiple/>
 
-                <input type="submit" name="publicar" value="PUBLICAR">
-            </div>
+                        <input type="submit" name="Publicar" value="PUBLICAR">
+                </div>
+            </form>
 
         </div>
+        
+        <?php
+        /* Traer todas la Publicaciones Realizadas */
 
+        $queryPublications = "SELECT * FROM publications";
+
+        $ejecutar = mysqli_query($conexionDB, $queryPublications);
+
+        while($filasPublication = mysqli_fetch_array($ejecutar)){
+
+
+        ?>
+        
         <!-- PUBLICACIONES DE USUARIOS -->
         <!-- Info del Usuario -->
         <div class="publicaciones-users">
+
             <div class="info-user-publicacion">
-                <img src="img/f8de62d1757fea74c38e5ec4a53d8e04.jpg">
+
+                <?php 
+                /* Traer nombre y foto del usuario que realizó la publicación */
+
+                    $sql = "SELECT userName, photoProfile FROM users 
+                            INNER JOIN publications 
+                            WHERE '".$filasPublication['id_users']."' = users.id ";
+
+                    $ejecutarsql = mysqli_query($conexionDB, $sql);
+
+                    $userData = mysqli_fetch_array($ejecutarsql);
+
+                ?>
+
+                <img src="DataBase/img/userPhoto/<?php echo $userData['photoProfile']; ?>">
                 <ul>
-                    <li><p>lrDemon</p></li>
+                    <li><p><?php echo $userData['userName']; ?></p></li>
                     <li><p>Hace 40 min.</p></li>
                 </ul>
                 <ul class="user-insignias">
@@ -79,13 +141,12 @@
             </div>
             <!-- Texto de la Publicacion -->
             <div class="descripcion-public">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, placeat deleniti. 
-                    Assumenda aliquam ab sunt tempora fugit recusandae repellendus nihil beatae ad. 
-                    Omnis, tempore quam. Ipsam distinctio ea saepe aliquid.</p>
+                <p><?php echo $filasPublication['descriptionPublication']; ?></p>
             </div>
             <!-- Imagen de la Publicacion -->
             <div class="image-public">
-                <img src="img/ishtar.jpg">
+
+                <img src="DataBase/img/publicationUser/<?php echo $filasPublication['imagePublication']; ?>">
             </div>
 
             <!-- Opciones de la publicacion-->
@@ -148,74 +209,9 @@
                 </div>            
             </div>
         </div>
-
-        <!-- PUBLICACIONES DE USUARIOS -->
-        <!-- Info del Usuario -->
-        <div class="publicaciones-users">
-            <div class="info-user-publicacion">
-                <img src="img/uwp1350848.jpeg">
-                <ul>
-                    <li><p>Koalita</p></li>
-                    <li><p>Hace 47 min.</p></li>
-                </ul>
-                <ul class="user-insignias">
-                    <li><i class="fab fa-sketch"></i></li>
-                    <li><i class="fab fa-galactic-senate"></i></li>
-                </ul>
-            </div>
-            <!-- Texto de la Publicacion -->
-            <div class="descripcion-public">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, placeat deleniti. 
-                    Assumenda aliquam ab sunt tempora fugit recusandae repellendus nihil beatae ad. 
-                    Omnis, tempore quam. Ipsam distinctio ea saepe aliquid.</p>
-            </div>
-            <!-- Imagen de la Publicacion -->
-            <div class="image-public">
-                <img src="img/maxresdefault.jpg">
-            </div>
-
-            <!-- Opciones de la publicacion-->
-            <div class="opciones-public">
-                <ul>
-                    <li><i class="far fa-heart"></i><p>12</p></li>
-                    <li><button id="btnComments" onclick="mostrarComment()"><i class="far fa-comment"></i></button><p>4</p></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- PUBLICACIONES DE USUARIOS -->
-        <!-- Info del Usuario -->
-        <div class="publicaciones-users">
-            <div class="info-user-publicacion">
-                <img src="img/7e6525f1f3c598574fc78a228b33cf26.jpg">
-                <ul>
-                    <li><p>Daisuke</p></li>
-                    <li><p>Hace 55 min.</p></li>
-                </ul>
-                <ul class="user-insignias">
-                    <li><i class="fab fa-sketch"></i></li>
-
-                </ul>
-            </div>
-            <!-- Texto de la Publicacion -->
-            <div class="descripcion-public">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, placeat deleniti. 
-                    Assumenda aliquam ab sunt tempora fugit recusandae repellendus nihil beatae ad.</p>
-            </div>
-            <!-- Imagen de la Publicacion -->
-            <div class="image-public">
-                <img src="img/genshin-impact-anime-girls-eula-genshin-impact-hd-wallpaper-preview.jpg">
-            </div>
-
-            <!-- Opciones de la publicacion-->
-            <div class="opciones-public">
-                <ul>
-                    <li><i class="far fa-heart"></i><p>12</p></li>
-                    <li><i class="far fa-comment"></i><p>4</p></li>
-                </ul>
-            </div>
-        </div>
-
+        <?php 
+        };
+        ?>
 
     </section>
 

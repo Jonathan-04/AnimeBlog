@@ -1,3 +1,17 @@
+<?php 
+
+/* Verificar si hay una Session iniciada */
+include 'DataBase/php/conexionDB.php';
+session_start();
+
+if(!isset($_SESSION['sessionUser']) || !$_SESSION['sessionUser'] ){
+
+    header("Location: login.php");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -60,6 +74,17 @@
 <!-- SECCIONES DE LAS OPCIONES DESPLEGABLES -->
 <div class="option-datosBasicosUser">
 
+    <?php 
+    
+    if (isset($_SESSION['idUser'])){
+
+    $query = "SELECT * FROM users WHERE id = '".$_SESSION['idUser']."' ";
+
+    $ejecutar = mysqli_query($conexionDB, $query);
+
+    $filas = mysqli_fetch_array($ejecutar);
+    
+    ?>
     <!-- SECCION DE LA OPCION 1 : DATOS BASICOS -->
     <article id="option1">
 
@@ -68,15 +93,15 @@
         <div class="data-sectionUser">
             <div class="data-User">
                 <ul>
-                    <li><label>NOMBRE: lrDemon</label></li>
-                    <li><label>APELLIDOS: lrDemon1 LrDemon2</label></li>
+                    <li><label>NOMBRE: <?php echo $filas['nameUser']; ?></label></li>
+                    <li><label>APELLIDOS: <?php echo $filas['surNames']; ?></label></li>
                 </ul>
             </div>
     
             <div class="data-User">
                 <ul>
-                    <li><label>USUARIO: lrDemon</label></li>
-                    <li><label>EMAIL: lrDemon@gmail.com</label></li>
+                    <li><label>USUARIO: <?php echo $filas['userName']; ?></label></li>
+                    <li><label>EMAIL: <?php echo $filas['email']; ?></label></li>
 
                     <button id="btn-cambiarContraseña">Cambiar Contraseña</button>
                 </ul>
@@ -88,8 +113,8 @@
         <div class="data-sectionUser">
             <div class="data-User">
                 <ul>
-                    <li><label>FECHA NACIMIENTO: 04/08/1999</label></li>
-                    <li><label>GENERO: MASCULINO</label></li>
+                    <li><label>FECHA NACIMIENTO: <?php echo $filas['birthDate']; ?></label></li>
+                    <li><label>GENERO: <?php echo $filas['gender']; ?></label></li>
                 </ul>
 
             <div class="data-User">
@@ -115,7 +140,7 @@
                         </div>
                     
                         <div class="modal-body">
-                            <form action="" method="POST">
+                            <form action="DataBase/php/editInfoUser.php" method="POST">
                                             
                                 <div class="infoPersonal">
                     
@@ -124,18 +149,17 @@
                                     <div class="datosCuenta">
                     
                                         <ul>
-                                            <li>NOMBRE: <input type="text" value="lrDemon"></li>
-                                            <li>APELLIDOS: <input type="text" value="lrDemon1 LrDemon2"></li>
+                                            <li>NOMBRE: <input type="text" name="nameUser" value="<?php echo $filas['nameUser']; ?>"></li>
+                                            <li>APELLIDOS: <input type="text" name="surNames" value="<?php echo $filas['surNames']; ?>"></li>
                                         </ul>
     
                                         <ul>
-                                            <li>USUARIO: <input type="text" value="lrDemon"></li>
-                                            <li>EMAIL <input type="email" value="lrDemon@gmail.com"></li>
+                                            <li>USUARIO: <input type="text" name="userName" value="<?php echo $filas['userName']; ?>"></li>
+                                            <li>EMAIL <input type="email" name="email" value="<?php echo $filas['email']; ?>"></li>
                                         </ul>
     
                                         <ul>
-                                            <li>CUMPLEAÑOS: <input type="date" name="" id=""></li>
-                                            <li>GENERO: <select name="" id="selectGeneroUser">
+                                            <li>GENERO: <select name="gender" id="selectGeneroUser">
                                                 <option value="Masculino">Masculino</option>
                                                 <option value="Femenino">Femenino</option>
                                             </select></li>
@@ -145,8 +169,8 @@
                                             
                                     <div class="btn-formulario">
                     
-                                        <!--<input type="submit" value="Cancelar" id="btn_cerrar">-->
-                                        <input type="submit" value="Actualizar" id="btn_actualizar" name="Actualizar">
+                                        <input type="submit" value="Cancelar" id="btn_cerrar">
+                                        <input type="submit" value="Actualizar" id="btn_actualizar" name="ActualizarDB">
                                                     
                                     </div>
                     
@@ -174,7 +198,7 @@
                     <ul>
                         <!-- FOTO DE PERFIL -->
                         <p>FOTO DE PERFIL</p>
-                        <img src="img/f8de62d1757fea74c38e5ec4a53d8e04.jpg">
+                        <img src="DataBase/img/userPhoto/<?php echo $filas['photoProfile']; ?>">
                     </ul>
                 </div>
         
@@ -209,7 +233,7 @@
                             </div>
                         
                             <div class="modal-body">
-                                <form action="" method="POST">
+                                <form action="DataBase/php/editPhotoUser.php" enctype="multipart/form-data" method="POST">
                                                 
                                     <div class="infoPersonal">
                         
@@ -218,7 +242,7 @@
                                         <div class="datosCuenta">
                         
                                             <ul>
-                                                <li>SELECCIONA TU FOTO: <input id='input-file' type='file'/></li>
+                                                <li>SELECCIONA TU FOTO: <input id='input-file' name="photoProfile" type='file'/></li>
                                                 <li><div id="previewImageUser"></div></li>
                                                 <hr>
                                             
@@ -228,8 +252,8 @@
                                                 
                                         <div class="btn-formulario">
                         
-                                            <!--<input type="submit" value="Cancelar" id="btn_cerrar">-->
-                                            <input type="submit" value="Actualizar" id="btn_actualizar" name="Actualizar">
+                                            <input type="submit" value="Cancelar" id="btn_cerrar">
+                                            <input type="submit" value="Actualizar" id="btn_actualizar" name="ActualizarPH">
                                                         
                                         </div>
                         
@@ -264,6 +288,10 @@
         </div>
 
     </article>
+
+    <?php 
+    }
+    ?>
 
 </div>
     
