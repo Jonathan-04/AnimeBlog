@@ -3,6 +3,7 @@
 /* Iniciar Session */
 session_start();
 include 'conexionDB.php';
+error_reporting(0);
 
 
 if($_POST['Ingresar']){

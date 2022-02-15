@@ -70,7 +70,7 @@ if(!isset($_SESSION['sessionUser']) || !$_SESSION['sessionUser'] ){
             $query = " SELECT id, userName, photoProfile FROM users WHERE id = '".$_SESSION['idUser']."'";
             $resultado = mysqli_query($conexionDB, $query);
 
-            $filas = mysqli_fetch_array($resultado);
+            $filas = mysqli_fetch_assoc($resultado);
 
             ?>
 
@@ -100,7 +100,7 @@ if(!isset($_SESSION['sessionUser']) || !$_SESSION['sessionUser'] ){
         <?php
         /* Traer todas la Publicaciones Realizadas */
 
-        $queryPublications = "SELECT * FROM publications";
+        $queryPublications = "SELECT * FROM publications ORDER BY datetimePublication DESC";
 
         $ejecutar = mysqli_query($conexionDB, $queryPublications);
 
@@ -169,54 +169,62 @@ if(!isset($_SESSION['sessionUser']) || !$_SESSION['sessionUser'] ){
                 <button id="btnCerrar-comments" onclick="cerrarCommentsInResponsive()"><i class="fas fa-chevron-up"></i></button>
                 
                 <!-- CAJA PARA REALIZAR EL COMENTARIO -->
+                <form method="POST" enctype="multipart/form-data" action="DataBase/php/insertComments.php?idPublic=<?php echo $filasPublication['id']; ?>">
                 <ul>
-                    <li><img src="img/f8de62d1757fea74c38e5ec4a53d8e04.jpg" alt=""></li>
-                    <li><textarea name="" id="comment-user" placeholder="Escribe tu comentario..."></textarea></li>
+                    <li><img src="DataBase/img/userPhoto/<?php echo $filas['photoProfile']; ?>"></li>
+                    <li><textarea name="commentUser" id="comment-user" placeholder="Escribe tu comentario..." required></textarea></li>
                     
-                    <li><a href="#"><i class="fas fa-paper-plane"></i></a></li>
+                    <li><input type="submit" value=">" name="insertComment"></li>
                 </ul>   
+                </form>
                 
                 <!-- COMENTARIOS DE OTROS USUARIOS -->
+
+                <?php
+
+                    /*Traer los comentarios realizados en la publicación */
+                    $commentsUsers = "SELECT * FROM comments_users WHERE id_publications = '".$filasPublication['id']."'  ";
+
+                    $ejecutarComments = mysqli_query($conexionDB, $commentsUsers);
+
+                    while($filasComments = mysqli_fetch_array($ejecutarComments)){
+
+                ?>
+
                 <div class="othersComment-user">
-                    <ul>
-                        <li><img src="img/uwp1350848.jpeg" alt=""></li>
                         <ul>
-                            <li>Koalita</li>
-                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+
+                        <?php 
+                        
+                        /* Traer información del usuario que realizó el comentario */
+                        $userComment = "SELECT userName, photoProfile 
+                                        FROM users 
+                                        INNER JOIN comments_users 
+                                        WHERE '".$filasComments['id_users']."' = users.id ";
+
+                        $ejecutarUserComments = mysqli_query($conexionDB, $userComment);
+
+                        $filasUserComment = mysqli_fetch_assoc($ejecutarUserComments);
+                        ?>
+
+                        <li><img src="DataBase/img/userPhoto/<?php echo $filasUserComment['photoProfile']; ?>" alt=""></li>
+                        <ul>
+                            <li><?php echo $filasUserComment['userName']; ?></li>
+                            <li><?php echo $filasComments['comment']; ?></li>
                         </ul>
 
-                    </ul>
-                </div>
-                <div class="othersComment-user">
-                    <ul>
-                        <li><img src="img/uwp1350848.jpeg" alt=""></li>
-                        <ul>
-                            <li>Koalita</li>
-                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
                         </ul>
-
-                    </ul>
-                </div>
-                <div class="othersComment-user">
-                    <ul>
-                        <li><img src="img/f8de62d1757fea74c38e5ec4a53d8e04.jpg" alt=""></li>
-                        <ul>
-                            <li>lrDemon</li>
-                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-                        </ul>
-
-                    </ul>
+                    </div>
+                    <?php 
+                    };
+                    ?>
                 </div>            
             </div>
+            <?php 
+            };
+            ?>
         </div>
-        <?php 
-        };
-        ?>
-
     </section>
-
-
-    <aside class="container-rankingWaifu"></aside>
 </div>
 
 <!-- FOOTER -->

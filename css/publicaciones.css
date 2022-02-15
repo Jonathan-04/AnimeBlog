@@ -348,9 +348,24 @@ body{
     color: #8932D9;
     font-size: 25px;
     transform: rotate(45deg);
-    margin: 10px;
-    margin-top: 20px;
+    margin: 5px;
+
 }
+
+.myComment-user input[type="submit"]{
+
+
+    background: #8932D9;
+    font-size: 20px;
+    color:white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border-style: none;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
 
 /* COMENTARIOS DE OTROS USUARIOS A LA PUBLICACION */
 .othersComment-user{
