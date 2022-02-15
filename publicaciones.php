@@ -183,7 +183,9 @@ if(!isset($_SESSION['sessionUser']) || !$_SESSION['sessionUser'] ){
                 <?php
 
                     /*Traer los comentarios realizados en la publicación */
-                    $commentsUsers = "SELECT * FROM comments_users WHERE id_publications = '".$filasPublication['id']."'  ";
+                    $commentsUsers = "SELECT * FROM comments_users 
+                                      WHERE id_publications = '".$filasPublication['id']."' 
+                                      ORDER BY dateComment DESC  ";
 
                     $ejecutarComments = mysqli_query($conexionDB, $commentsUsers);
 
