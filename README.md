@@ -1,4 +1,4 @@
 # AnimeBlog
 
 Página de Blog con el tema orientado al anime
-Subido en netlify.app: https://animeblogtest.netlify.app
+Subido solo el FrontEnd en netlify.app: https://animeblogtest.netlify.app
